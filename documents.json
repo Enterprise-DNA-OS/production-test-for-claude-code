@@ -1,11 +1,42 @@
 [
   {
-    "name": "example",
-    "title": "TODO(author): the first document this industry must produce",
-    "for_each": "select gen_random_uuid() as id, 'Example' as name",
+    "name": "test-history",
+    "title": "Unit test history",
+    "for_each": "SELECT id,serial_number AS name FROM reports",
     "file": "name",
     "sections": [
-      { "title": "Details", "sql": "select 'replace me' as item, $1::text as record_id" }
+      {
+        "title": "Recorded result",
+        "layout": "record",
+        "sql": "SELECT source_report_id,part_number,revision,serial_number,process_name,started_at,result FROM reports WHERE id=$1"
+      },
+      {
+        "title": "Recorded steps",
+        "sql": "SELECT path,name,status,measurements FROM steps WHERE report_id=$1"
+      },
+      {
+        "title": "Follow-up actions",
+        "sql": "SELECT title,owner,due,state,closure_evidence FROM actions WHERE report_id=$1"
+      },
+      {
+        "title": "Evidence notes",
+        "sql": "SELECT actor,body,created_at FROM notes WHERE report_id=$1",
+        "note": "Internal evidence packet. Not a certificate or authorisation to ship."
+      }
+    ]
+  },
+  {
+    "name": "corrective-action",
+    "title": "Corrective action record",
+    "for_each": "SELECT id,title AS name FROM actions",
+    "file": "name",
+    "sections": [
+      {
+        "title": "Action and closure",
+        "layout": "record",
+        "sql": "SELECT * FROM v_actions WHERE id=$1",
+        "note": "Closure records follow-up work. It does not change the original test result."
+      }
     ]
   }
 ]

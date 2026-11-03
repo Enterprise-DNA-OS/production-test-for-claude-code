@@ -1,0 +1,20 @@
+[
+  {
+    "title": "First observed yield",
+    "ask": "Which products passed their first recorded test?",
+    "command": "npm run production -- yield",
+    "output": "source                | part_number | revision | process_code | observed_units | first_pass_units | ambiguous_units | first_observed_pass_pct | retested_units | latest_pass_units\n----------------------|-------------|----------|--------------|----------------|------------------|-----------------|-------------------------|----------------|------------------\nFictional Electronics | CTRL-10     | A        | 10           | 4              | 1                | 0               | 25.00                   | 1              | 2                \nFictional Electronics | CTRL-10     | A        | 20           | 1              | 1                | 0               | 100.00                  | 0              | 1                \nFictional Electronics | SENSE-20    | A        | 10           | 1              | 0                | 0               | 0.00                    | 0              | 0"
+  },
+  {
+    "title": "Retests keep the first failure",
+    "ask": "Which units passed after an earlier failed test?",
+    "command": "npm run production -- retests",
+    "output": "source                | part_number | revision | serial_number | process_code | attempts | first_result | latest_result | ambiguous_order\n----------------------|-------------|----------|---------------|--------------|----------|--------------|---------------|----------------\nFictional Electronics | CTRL-10     | A        | SN-101        | 10           | 2        | F            | P             | false"
+  },
+  {
+    "title": "The production review list",
+    "ask": "What needs the quality lead to follow up?",
+    "command": "npm run production -- attention",
+    "output": "kind                 | reference                            | issue                                              \n---------------------|--------------------------------------|----------------------------------------------------\naccess-review        | Fictional Electronics                | Access review overdue                              \naction               | 94e6d7ff-46ec-5b38-ba01-2ab4ad64892d | Investigate supply voltage retest                  \ncalibration-evidence | 45c5ca3f-3274-5a25-a273-c8221e7ba412 | No recorded calibration period covers the test date\nlatest-not-pass      | SN-103                               | Latest recorded outcome is E                       \nlatest-not-pass      | SN-104                               | Latest recorded outcome is F                       \nlatest-not-pass      | SN-201                               | Latest recorded outcome is F                       \nresult-review        | d055d9be-8198-523a-930d-6bf454223ef9 | Nonfinal result needs review                       \nstation-owner        | Bench B                              | Station owner unassigned"
+  }
+]

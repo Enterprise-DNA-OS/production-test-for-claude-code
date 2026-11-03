@@ -1,0 +1,261 @@
+[
+  {
+    "type": "T",
+    "id": "e17c3493-643b-578f-a150-0e6d0a592bb1",
+    "pn": "CTRL-10",
+    "sn": "SN-101",
+    "rev": "A",
+    "processCode": 10,
+    "processName": "Functional test",
+    "result": "F",
+    "machineName": "Bench A",
+    "start": "2026-10-20T08:00:00Z",
+    "uut": {
+      "execTime": 42,
+      "batchSN": "LOT-2026-10"
+    },
+    "root": {
+      "name": "Main",
+      "status": "F",
+      "steps": [
+        {
+          "name": "Supply voltage",
+          "status": "F",
+          "numericMeas": [
+            {
+              "name": "Voltage",
+              "status": "F",
+              "value": 4.4,
+              "lowLimit": 4.8,
+              "highLimit": 5.2,
+              "compOp": "GELE",
+              "unit": "V"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "T",
+    "id": "414c2c6a-a603-53c5-a43e-8ee5dc1959c1",
+    "pn": "CTRL-10",
+    "sn": "SN-101",
+    "rev": "A",
+    "processCode": 10,
+    "processName": "Functional test",
+    "result": "P",
+    "machineName": "Bench A",
+    "start": "2026-10-20T09:00:00Z",
+    "uut": {
+      "execTime": 43,
+      "batchSN": "LOT-2026-10"
+    },
+    "root": {
+      "name": "Main",
+      "status": "P",
+      "steps": [
+        {
+          "name": "Supply voltage",
+          "status": "P",
+          "numericMeas": [
+            {
+              "name": "Voltage",
+              "status": "P",
+              "value": 5.0,
+              "lowLimit": 4.8,
+              "highLimit": 5.2,
+              "compOp": "GELE",
+              "unit": "V"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "T",
+    "id": "dcfc193e-26b0-5645-b254-7716dd34824e",
+    "pn": "CTRL-10",
+    "sn": "SN-102",
+    "rev": "A",
+    "processCode": 10,
+    "processName": "Functional test",
+    "result": "P",
+    "machineName": "Bench A",
+    "start": "2026-10-20T10:00:00Z",
+    "uut": {
+      "execTime": 44,
+      "batchSN": "LOT-2026-10"
+    },
+    "root": {
+      "name": "Main",
+      "status": "P",
+      "steps": [
+        {
+          "name": "Supply voltage",
+          "status": "P",
+          "numericMeas": [
+            {
+              "name": "Voltage",
+              "status": "P",
+              "value": 5.0,
+              "lowLimit": 4.8,
+              "highLimit": 5.2,
+              "compOp": "GELE",
+              "unit": "V"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "T",
+    "id": "d055d9be-8198-523a-930d-6bf454223ef9",
+    "pn": "CTRL-10",
+    "sn": "SN-103",
+    "rev": "A",
+    "processCode": 10,
+    "processName": "Functional test",
+    "result": "E",
+    "machineName": "Bench A",
+    "start": "2026-10-20T11:00:00Z",
+    "uut": {
+      "execTime": 45,
+      "batchSN": "LOT-2026-10"
+    },
+    "root": {
+      "name": "Main",
+      "status": "E",
+      "steps": [
+        {
+          "name": "Device connection",
+          "status": "E",
+          "numericMeas": [
+            {
+              "name": "Voltage",
+              "status": "E",
+              "value": 4.4,
+              "lowLimit": 4.8,
+              "highLimit": 5.2,
+              "compOp": "GELE",
+              "unit": "V"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "T",
+    "id": "c19d29e9-be38-5470-bcef-92df75cfe89f",
+    "pn": "CTRL-10",
+    "sn": "SN-104",
+    "rev": "A",
+    "processCode": 10,
+    "processName": "Functional test",
+    "result": "F",
+    "machineName": "Bench A",
+    "start": "2026-10-20T12:00:00Z",
+    "uut": {
+      "execTime": 46,
+      "batchSN": "LOT-2026-10"
+    },
+    "root": {
+      "name": "Main",
+      "status": "F",
+      "steps": [
+        {
+          "name": "Supply voltage",
+          "status": "F",
+          "numericMeas": [
+            {
+              "name": "Voltage",
+              "status": "F",
+              "value": 4.4,
+              "lowLimit": 4.8,
+              "highLimit": 5.2,
+              "compOp": "GELE",
+              "unit": "V"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "T",
+    "id": "b0b998a2-4fb7-5578-ad89-213739f50204",
+    "pn": "CTRL-10",
+    "sn": "SN-104",
+    "rev": "A",
+    "processCode": 20,
+    "processName": "Final inspection",
+    "result": "P",
+    "machineName": "Bench A",
+    "start": "2026-10-20T13:00:00Z",
+    "uut": {
+      "execTime": 47,
+      "batchSN": "LOT-2026-10"
+    },
+    "root": {
+      "name": "Main",
+      "status": "P",
+      "steps": [
+        {
+          "name": "Supply voltage",
+          "status": "P",
+          "numericMeas": [
+            {
+              "name": "Voltage",
+              "status": "P",
+              "value": 5.0,
+              "lowLimit": 4.8,
+              "highLimit": 5.2,
+              "compOp": "GELE",
+              "unit": "V"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "T",
+    "id": "45c5ca3f-3274-5a25-a273-c8221e7ba412",
+    "pn": "SENSE-20",
+    "sn": "SN-201",
+    "rev": "A",
+    "processCode": 10,
+    "processName": "Functional test",
+    "result": "F",
+    "machineName": "Bench B",
+    "start": "2026-10-20T14:00:00Z",
+    "uut": {
+      "execTime": 48,
+      "batchSN": "LOT-2026-10"
+    },
+    "root": {
+      "name": "Main",
+      "status": "F",
+      "steps": [
+        {
+          "name": "Supply voltage",
+          "status": "F",
+          "numericMeas": [
+            {
+              "name": "Voltage",
+              "status": "F",
+              "value": 4.4,
+              "lowLimit": 4.8,
+              "highLimit": 5.2,
+              "compOp": "GELE",
+              "unit": "V"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

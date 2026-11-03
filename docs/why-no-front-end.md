@@ -1,24 +1,9 @@
-# Why there is no front end
+# Why the review desk has no front end
 
-WATS is a database with a subscription. The tables underneath it are ordinary: a few entities, a few relationships, a handful of workflows you repeat every week. What you pay for is the layer on top that lets people who do not write SQL get at those tables. Screens, filters, dashboards, forms.
+The product is an owned record of production tests and the follow-up behind them. A lead asks about yield, retests and unresolved failures. The CLI reads the database and prepares a report or draft. Read-only HTML provides a view of the week and paperwork to print.
 
-That layer used to be the whole product, because talking to a database was hard. It is not hard any more. Open this folder in Claude Code, describe what you want, and it writes the query, runs it, and explains the answer. Ask a question the dashboard never had a chart for and you still get an answer.
+This fits the review desk after test results have been exported. It is not an operator console on the production line. WATS includes live collection, dashboards, repair workflows and other functions beyond this base.
 
-## What you gain
+A screen can provide live updates, mobile access, offline capture, visual configuration and drag-and-drop work. Those are not part of this local CLI. There are no action buttons in its reports. Enterprise DNA scopes the business's needed connections and screens when building its version. Keep existing equipment and operational controls until that work is tested.
 
-- **Better answers.** A dashboard shows what the vendor decided to chart. Here you ask your own question, in your own words, and get it answered against your own data.
-- **No seats.** Everyone who needs to look can look. The bill does not grow with headcount.
-- **Your data in your Postgres.** Plain tables. Back them up, query them from anything, leave any time. There is no export step because there is nothing to leave.
-- **A process that matches you.** When your way of working changes, you add a command. You do not wait for a feature request to clear.
-
-## What you give up
-
-- **A visual board.** Stages are a table you ask about, not cards you drag.
-- **A phone app.** It runs where Claude Code runs.
-- **A vendor help desk.** This is open source. Enterprise DNA supports the installed version for businesses that want someone to call.
-
-## Who this fits
-
-Small teams who already use Claude Code, or who would rather learn to ask than learn another interface. If your team needs a screen to look at all day, keep WATS. If you need the answers more than the screens, this is cheaper, faster and yours.
-
-Installed and run for you: https://enterprisedna.co/omni/instead-of/wats
+Claude Code, Codex, OpenCode and Cursor use the same files and database. There is one command library, not separate systems for each agent. Generated output is private and nothing sends.

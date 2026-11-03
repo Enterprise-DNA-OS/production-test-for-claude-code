@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Which product has the lowest first-observed pass rate?",
+    "command": "yield"
+  },
+  {
+    "question": "Which units passed only after a failed attempt?",
+    "command": "retests"
+  },
+  {
+    "question": "Which test steps account for the most failed observations?",
+    "command": "failures"
+  },
+  {
+    "question": "Which units still have a nonpassing latest result?",
+    "command": "attention"
+  },
+  {
+    "question": "What happened to this serial number across different test processes?",
+    "command": "trace --serial=SN-104"
+  },
+  {
+    "question": "Which station records lack calibration evidence for a test date?",
+    "command": "compliance"
+  },
+  {
+    "question": "Which corrective actions are overdue, and who owns them?",
+    "command": "actions"
+  },
+  {
+    "question": "How did daily test-attempt counts vary by product?",
+    "command": "trends"
+  },
+  {
+    "question": "Which imported files and source counts support this review?",
+    "command": "imports"
+  },
+  {
+    "question": "Who recorded each follow-up and closure?",
+    "command": "history"
+  }
+]
