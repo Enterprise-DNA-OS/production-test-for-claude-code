@@ -35,7 +35,7 @@ PGlite stores local data under .data/db. Set DATABASE_URL to use PostgreSQL and 
 4. `/attention` finds overdue follow-up, nonpassing units and missing record controls.
 5. `/weekly-review` combines actual results, owners and compliance findings into a private draft.
 
-31 slash commands live in .claude/commands. The single CLI has 28 verbs including help. Run `npm run production -- help`. Reads produce human-readable columns by default and --json for processing. Names match without case, ID prefixes work, and ambiguous matches list candidates and exit 1. Use IDs where multiple sources have the same station or report name.
+32 slash commands live in .claude/commands. The single CLI has 28 verbs including help. Run `npm run production -- help`. Reads produce human-readable columns by default and --json for processing. Names match without case, ID prefixes work, and ambiguous matches list candidates and exit 1. Use IDs where multiple sources have the same station or report name.
 
 ## Bring WATS records across
 
