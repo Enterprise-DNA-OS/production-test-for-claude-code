@@ -16,7 +16,7 @@ try{
  if(process.env.TEST_DATABASE_URL){const tables=await db.query("SELECT tablename FROM pg_tables WHERE schemaname='public'");assert.equal(tables.length,0,'TEST_DATABASE_URL must be an empty disposable database');}
  await migrate(db);assert.equal((await migrate(db)).ran.length,0);
  const seed=fs.readFileSync(path.join(REPO_ROOT,'supabase/seed.sql'),'utf8');await db.exec(seed);await db.exec(seed);
- assert.equal((await run('reports')).length,7);
+ assert.equal((await run('reports')).length,7);assert.ok((await run('history')).length>0);
  const y=await run('yield');const ctrl=y.find(r=>r.part_number==='CTRL-10'&&r.process_code==='10');assert.equal(ctrl.observed_units,4);assert.equal(Number(ctrl.first_observed_pass_pct),25);assert.equal(ctrl.retested_units,1);
  const retests=await run('retests');assert.equal(retests.length,1);assert.equal(retests[0].first_result,'F');assert.equal(retests[0].latest_result,'P');
  const reports=await run('reports');const first=reports[0];assert.equal((await run('report','--ref='+first.id.slice(0,12)))[0].steps.length,1);
@@ -24,6 +24,7 @@ try{
  for(const v of ['sources','stations','products','units','failures','trends','actions','attention','compliance','imports','history','calibrations','help'])await run(v);
  assert.ok((await run('failures')).some(r=>r.failed_step_occurrences>=2));assert.ok((await run('compliance')).some(r=>r.rule==='calibration-evidence'));
  await rejects(()=>db.query('UPDATE reports SET result=$1 WHERE id=$2',['P',first.id]),/append-only/);
+ const repeatedSeed=await run('import','wats','--source=Fictional Electronics','--file='+path.join(REPO_ROOT,'examples/wats-uut.json'),'--expected-count=7','--source-ref=Repeated fictional evidence','--actor=Test operator');assert.equal(repeatedSeed[0].added,0);
  const [source]=await run('add-source','--name=Imported sample','--owner=Actual test operator','--purpose=Test only','--access-review=2027-01-01','--retention-review=2027-02-01','--actor=Test operator');
  const base=['wats','--source=imported sample','--file='+path.join(REPO_ROOT,'examples/wats-uut.json'),'--expected-count=7','--source-ref=Fictional export all seven reports','--actor=Test operator'];
  assert.equal((await run('import',...base,'--dry-run'))[0].added,7);assert.equal((await run('reports')).length,7);

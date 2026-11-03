@@ -6,15 +6,15 @@
     "sections": [
       {
         "title": "First observed yield",
-        "sql": "SELECT * FROM v_yield ORDER BY source,part_number,process_code"
+        "sql": "SELECT source,part_number||' / '||revision AS product,process_code AS process,observed_units AS units,first_observed_pass_pct AS first_observed_pass_percent,retested_units AS retested,latest_pass_units AS latest_pass FROM v_yield ORDER BY source,part_number,process_code"
       },
       {
         "title": "Retested units",
-        "sql": "SELECT * FROM v_units WHERE attempts>1"
+        "sql": "SELECT source,part_number||' / '||revision AS product,serial_number,process_code AS process,attempts,first_result,latest_result FROM v_units WHERE attempts>1 ORDER BY source,part_number,serial_number"
       },
       {
         "title": "Failure patterns",
-        "sql": "SELECT * FROM v_failures ORDER BY failed_step_occurrences DESC"
+        "sql": "SELECT source,part_number||' / '||revision AS product,station,step,failed_step_occurrences AS failures,affected_reports FROM v_failures ORDER BY failed_step_occurrences DESC"
       },
       {
         "title": "Attention",
